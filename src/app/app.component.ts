@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SquareComponent } from "./square/square.component";
-import { BoardComponent } from "./board/board.component";
+import { BoardComponent } from "./tictactoe/board/board.component";
+import { NavBar } from "./navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BoardComponent],
+  imports: [RouterOutlet, BoardComponent, NavBar],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

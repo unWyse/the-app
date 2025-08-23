@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="navbar-nav">
+    @for (item of items; track $index) {
+      <li class="navbar-nav-item">
+        <a
+          class="navbar-nav-link"
+          [routerLink]="item?.routeLink"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="navbar-link-icon" class="material-icons" [class]="item?.icon">
+            <span class="material-icons">{{item.icon}}</span>
+          </i>
+        </a>
+      </li>
+    }
+  </div>
+</div>
