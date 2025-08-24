@@ -9,25 +9,26 @@ import { RouterModule, RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
+
 export class NavBar {
   items = [
     {
-      routeLink: '../direct',
+      routeLink: 'direct-message',
       icon: 'mail',
       label: 'Direct',
     },
     {
-      routeLink: '../group',
+      routeLink: 'group-message',
       icon: 'groups',
       label: 'Group',
     },
     {
-      routeLink: '../public',
+      routeLink: 'public-post',
       icon: 'language',
       label: 'Public',
     },
     {
-      routeLink: '../settings',
+      routeLink: 'settings',
       icon: 'miscellaneous_services',
       label: 'Settings',
     }
