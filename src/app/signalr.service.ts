@@ -11,7 +11,7 @@ export class SignalRService {
 
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5120/') // URL of the SignalR hub
+      .withUrl('http://localhost:5120/hub') // URL of the SignalR hub
       .build();
 
     this.hubConnection
@@ -21,13 +21,13 @@ export class SignalRService {
   }
 
   public addMessageListener = () => {
-    this.hubConnection.on('ReceiveMessage', (user: string, message: string) => {
+    this.hubConnection.on('messageReceived', (user: string, message: string) => {
       console.log(`User: ${user}, Message: ${message}`);
     });
   }
 
   public sendMessage = (user: string, message: string) => {
-    this.hubConnection.invoke('SendMessage', user, message)
+    this.hubConnection.invoke('newMessage', user, message)
       .catch(err => console.error(err));
   }
 

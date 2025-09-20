@@ -1,10 +1,10 @@
-<div id="divMessages" class="messages"></div>
+<div #divMessages class="messages"></div>
 <div class="input-zone">
-    <label id="lblSender" for="tbSender">Name:</label>
-    <input id="tbSender" class="input-zone-input" type="text" />
+    <label #lblSender for="tbSender">Name:</label>
+    <input #tbSender class="input-zone-input" type="text" />
 </div>
 <div class="input-zone">
-    <label id="lblMessage" for="tbMessage">Message:</label>
-    <input id="tbMessage" class="input-zone-input" type="text" />
-    <button id="btnSend">Send</button>
+    <label #lblMessage for="tbMessage">Message:</label>
+    <input #tbMessage class="input-zone-input" type="text" (keyup.enter)="sendMessage(tbMessage.value)"/>
+    <button #btnSend (click)="sendMessage(tbMessage.value)">Send</button>
 </div>
